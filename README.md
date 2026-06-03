@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <a href="#"><img src="DevRsc/Media/radtools-logo-transparent.png" width="400"></a><a href="#"><img src="DevRsc/Media/radtools-title.png" height="130"></a>
+  <a href="#"><img src="DevRsc/Media/radtools-logo-transparent.png" width="200"></a><a href="#"><img src="DevRsc/Media/radtools-title.png" height="130"></a>
 </p>
 
 ---
