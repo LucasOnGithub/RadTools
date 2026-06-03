@@ -20,16 +20,11 @@ namespace RadTools.Utilities
         private static int disconnects = 0;
         private static float disconnectTime = 0f;
 
-        internal static bool enableMod;
-
         internal void Awake() =>
             Instance = this;
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            if (!enableMod)
-                return;
-
             if (Time.time > disconnectTime)
                 disconnects = 0;
 
