@@ -59,14 +59,6 @@ public class PlayerRoot
         return world - Head.transform.position + TrackingSpace.transform.position;
     }
 
-    public static void TeleportPlayer(Vector3 pos, Quaternion? rot = null)
-    {
-        TrackingSpace._rigidbodyEx.unityRigidbody.velocity = Vector3.zero;
-        TrackingSpace.transform.position = World2Player(pos);
-        if (rot.HasValue)
-            TrackingSpace.transform.rotation = rot.Value;
-    }
-
     #endregion
 
     #region Events and Interactions
