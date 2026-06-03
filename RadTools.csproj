@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- <LangVersion>preview</LangVersion> I don't trust it -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(GameAssemblyPath)/*.dll" />
+    <Reference Include="$(BepInExAssemblyPath)/*.dll" />
+  </ItemGroup>
+
+</Project>

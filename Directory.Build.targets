@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+  <!-- Copy to Plugins (non-obfuscated, when Security is false) -->
+  <Target Name="CopyToPluginsNoSec" AfterTargets="Build" Condition="'$(OBFUSCATE)' != 'true'">
+    <ItemGroup>
+      <FilesToCopyNoSec Include="$(TargetDir)$(TargetName).dll" Condition="Exists('$(TargetDir)$(TargetName).dll')"/>
+      <FilesToCopyNoSec Include="$(TargetDir)$(TargetName).pdb" Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(FilesToCopyNoSec)" DestinationFiles="@(FilesToCopyNoSec->'$(PluginsPath)\%(Filename)%(Extension)')"/>
+    <Message Text="Copied non-obfuscated $(TargetName).dll and .pdb to Plugins" Importance="high"/>
+  </Target>
+
+</Project>
