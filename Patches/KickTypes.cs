@@ -56,7 +56,7 @@ internal class KickTypes
         [HarmonyPrefix]
         private static void Prefix(EventData photonEvent)
         {
-            if (photonEvent.Code != PunEvent.CloseConnection)
+            if (photonEvent.Code == PunEvent.CloseConnection)
                 Notifications.Notify($"CloseConnection sent, either cheater or server request", Color.yellow);
         }
     }

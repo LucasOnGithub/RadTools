@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace RadTools.Utilities
+namespace RadTools.Features
 {
     [Instance.AddOnAwake]
     internal class LoadFix : MonoWrap
