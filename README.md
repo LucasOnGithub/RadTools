@@ -11,6 +11,9 @@ These fixes are not intended to be used as cheats and do not intentionally exhib
 
 They are intended to be used by players who are having troubles with Radium, specifically connecting to rooms.
 
+RadTools does not send any data. RadTools does not read any files. RadTools is solely just a debugging and quality-of-life mod. It is not a cheat, it is not a base for cheats, and it never will be. Cheating is bad.
+> cough cough i'd never give you cheats publically anymore COUGH chgfhhfgouvhnxvc.
+
 <details>
   <summary><b>Installation</b></summary>
 	
