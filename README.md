@@ -53,3 +53,5 @@ If you wish to support me, here are some of the ways you can!
 | CashApp    | [![CashApp](https://img.shields.io/badge/CashApp-$iiWasHere-green?style=for-the-badge&logo=cashapp)](https://cash.app/$iiWasHere) | [$iiWasHere](https://cash.app/$iiWasHere) |
 
 </details>
+
+> RadTools IS NOT an official Radium, Rec Room, or other server's official tool. Nor is it a cheat, follows the Code of Conduct of mostly all servers.  Any instances where the Code of Conduct can be broken must be reported via GitHub issues and will be patched promptly.  Happy developing.
