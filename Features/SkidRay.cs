@@ -40,7 +40,7 @@ namespace RadTools.Features
 
                 var creator = PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(photonView.CreatorActorNr);
                 if (creator == null)
-                    creator = PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(photonView.OwnerActorNr);
+                    return;
                 
                 if ((new[]
                 {
@@ -97,7 +97,7 @@ namespace RadTools.Features
                         continue;
                     var creator = PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(photonView.CreatorActorNr);
                     if (creator == null)
-                        creator = PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(photonView.OwnerActorNr);
+                        continue;
 
                     notificationTime = Time.time + 1f;
                     Notifications.Notify($"{tool.gameObject.name} created by {creator?.NickName ?? "Unknown"}", tool.gameObject.name.ToLower().Contains("consumable") ? Color.white : Color.red);
