@@ -6,10 +6,13 @@
 
 # RadTools
 
-RadTools is a collection of background fixes that I have found myself for early 2021 builds of Rec Room, specifically targetting [Radium.](https://radie.app)
+RadTools is a collection of fixes and tools that I have found myself for early 2021 builds of Rec Room, specifically targetting [Radium.](https://radie.app)
 These fixes are not intended to be used as cheats and do not intentionally exhibit any cheating behaviour. They're not guaranteed to work on all versions of Rec Room, nor work all of the time, but they do their best.
 
 They are intended to be used by players who are having troubles with Radium, specifically connecting to rooms.
+
+RadTools does not send any data. RadTools does not read any files. RadTools is solely just a debugging and quality-of-life mod. It is not a cheat, it is not a base for cheats, and it never will be. Cheating is bad.
+> cough cough i'd never give you cheats publically anymore COUGH chgfhhfgouvhnxvc.
 
 <details>
   <summary><b>Installation</b></summary>
@@ -53,3 +56,5 @@ If you wish to support me, here are some of the ways you can!
 | CashApp    | [![CashApp](https://img.shields.io/badge/CashApp-$iiWasHere-green?style=for-the-badge&logo=cashapp)](https://cash.app/$iiWasHere) | [$iiWasHere](https://cash.app/$iiWasHere) |
 
 </details>
+
+> RadTools IS NOT an official Radium, Rec Room, or other server's official tool. Nor is it a cheat, follows the Code of Conduct of mostly all servers.  Any instances where the Code of Conduct can be broken must be reported via GitHub issues and will be patched promptly.  Happy developing.
