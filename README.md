@@ -6,7 +6,7 @@
 
 # RadTools
 
-RadTools is a collection of background fixes that I have found myself for early 2021 builds of Rec Room, specifically targetting [Radium.](https://radie.app)
+RadTools is a collection of fixes and tools that I have found myself for early 2021 builds of Rec Room, specifically targetting [Radium.](https://radie.app)
 These fixes are not intended to be used as cheats and do not intentionally exhibit any cheating behaviour. They're not guaranteed to work on all versions of Rec Room, nor work all of the time, but they do their best.
 
 They are intended to be used by players who are having troubles with Radium, specifically connecting to rooms.
