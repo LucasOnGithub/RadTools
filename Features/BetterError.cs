@@ -5,6 +5,7 @@ using Photon.Realtime;
 using RadTools.Core;
 using RadTools.Extensions;
 using RadTools.Libraries.RadiumWrapper;
+using RadTools.Patches;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace RadTools.Features
             ["(Error: 4)"] = "(ClientTimeout code 4)",
             ["(Error: 32752)"] = "(InsufficientSpace \"There is no more space in this room\" code 32752)",
             ["(Error: 32765)"] = "(Game full code 32765)",
+            ["(Error: 32747)"] = "(Region error, ZombieB's fault. code 32747)",
             ["(Error: -1)"] = "(RadTools automated disconnect code -1/invalid)"
         };
 
@@ -42,8 +44,13 @@ namespace RadTools.Features
 
             foreach (var error in errors)
             {
-                if (text.text.Contains(error.Key))
-                    text.text = text.text.Replace(error.Key, error.Value);
+                if (text.text.Contains(" " + error.Key))
+                    text.text = text.text.Replace(" "+error.Key, error.Value);
+            }
+
+            if (text.text.Contains("recroom.happyfox.com"))
+            {
+                text.text = text.text.Replace("recroom.happyfox.com", "discord.gg/radium-rr\n\nPhoton error reason: " + NetworkErrorPatch.LastError+"\n");
             }
         }
     }
