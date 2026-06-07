@@ -14,6 +14,13 @@ They are intended to be used by players who are having troubles with Radium, spe
 RadTools does not send any data. RadTools does not read any files. RadTools is solely just a debugging and quality-of-life mod. It is not a cheat, it is not a base for cheats, and it never will be. Cheating is bad.
 > cough cough i'd never give you cheats publically anymore COUGH chgfhhfgouvhnxvc.
 
+## Features
+
+* Better error reasons. Gives you the actual reason behind what the errors you're getting means, like 32752. If an error is not corrected, it is not yet been discovered; create a github issue for this case
+* kick debugging (tells you why and for what you're being kicked for) (i also fixed it saying the server's trying to run closeconnection every frame)
+* infinite load fixer (sends you too your offline dorm if truly failed at the end of the day)
+* Skid Ray (in Settings > Advanced in your watch) will tell you exactly who made the objects you see by putting your hand near them and will notify you when prefabs are spawned out of the nature
+
 <details>
   <summary><b>Installation</b></summary>
 	
