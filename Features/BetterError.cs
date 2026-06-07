@@ -23,7 +23,7 @@ namespace RadTools.Features
         internal static BetterError Instance;
         internal static Dictionary<string, string> errors = new()
         {
-            ["(Error: 4)"] = "(ClientTimeout code 4)",
+            ["(Error: 4)"] = "(Failed to connect to region code 4)",
             ["(Error: 32752)"] = "(InsufficientSpace \"There is no more space in this room\" code 32752)",
             ["(Error: 32765)"] = "(Game full code 32765)",
             ["(Error: 32747)"] = "(Region error, ZombieB's fault. code 32747)",
