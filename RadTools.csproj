@@ -1,14 +1,410 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>disable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <!-- <LangVersion>preview</LangVersion> I don't trust it -->
-  </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="$(GameAssemblyPath)/*.dll" />
-    <Reference Include="$(BepInExAssemblyPath)/*.dll" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>disable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Il2CppInterop.Runtime" Version="1.5.1" />
+	  <PackageReference Include="OVRSharp" Version="1.2.0" />
+	</ItemGroup>
+
+	<!-- =========================
+       BepInEx INTEROP DLLs
+       ========================= -->
+	<ItemGroup>
+
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>..\..\BepInEx\interop\Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>..\..\BepInEx\interop\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="AstarPathfindingProject">
+			<HintPath>..\..\BepInEx\interop\AstarPathfindingProject.dll</HintPath>
+		</Reference>
+		<Reference Include="Bitpacker">
+			<HintPath>..\..\BepInEx\interop\Bitpacker.dll</HintPath>
+		</Reference>
+		<Reference Include="Circuits">
+			<HintPath>..\..\BepInEx\interop\Circuits.dll</HintPath>
+		</Reference>
+		<Reference Include="CSCore">
+			<HintPath>..\..\BepInEx\interop\CSCore.dll</HintPath>
+		</Reference>
+		<Reference Include="EasyAntiCheat.Client">
+			<HintPath>..\..\BepInEx\interop\EasyAntiCheat.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Google.Protobuf">
+			<HintPath>..\..\BepInEx\interop\Google.Protobuf.dll</HintPath>
+		</Reference>
+		<Reference Include="ICSharpCode.SharpZipLib">
+			<HintPath>..\..\BepInEx\interop\ICSharpCode.SharpZipLib.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppMono.Security">
+			<HintPath>..\..\BepInEx\interop\Il2CppMono.Security.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Configuration">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.Configuration.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Core">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Drawing">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.Drawing.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Runtime">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Runtime.Serialization">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.Runtime.Serialization.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Xml">
+			<HintPath>..\..\BepInEx\interop\Il2CppSystem.Xml.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Oculus.Platform">
+			<HintPath>..\..\BepInEx\interop\Oculus.Platform.dll</HintPath>
+		</Reference>
+		<Reference Include="Oculus.VR">
+			<HintPath>..\..\BepInEx\interop\Oculus.VR.dll</HintPath>
+		</Reference>
+		<Reference Include="OSA">
+			<HintPath>..\..\BepInEx\interop\OSA.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Pathfinding.ClipperLib">
+			<HintPath>..\..\BepInEx\interop\Pathfinding.ClipperLib.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Ionic.Zip.Reduced">
+			<HintPath>..\..\BepInEx\interop\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Poly2Tri">
+			<HintPath>..\..\BepInEx\interop\Pathfinding.Poly2Tri.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Photon3Unity3D">
+			<HintPath>..\..\BepInEx\interop\Photon3Unity3D.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonChat">
+			<HintPath>..\..\BepInEx\interop\PhotonChat.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonRealtime">
+			<HintPath>..\..\BepInEx\interop\PhotonRealtime.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonUnityNetworking">
+			<HintPath>..\..\BepInEx\interop\PhotonUnityNetworking.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonUnityNetworking.Utilities">
+			<HintPath>..\..\BepInEx\interop\PhotonUnityNetworking.Utilities.dll</HintPath>
+		</Reference>
+
+		<Reference Include="PhotonVoice.API">
+			<HintPath>..\..\BepInEx\interop\PhotonVoice.API.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonVoice">
+			<HintPath>..\..\BepInEx\interop\PhotonVoice.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonVoice.PUN">
+			<HintPath>..\..\BepInEx\interop\PhotonVoice.PUN.dll</HintPath>
+		</Reference>
+		<Reference Include="PhotonWebSocket">
+			<HintPath>..\..\BepInEx\interop\PhotonWebSocket.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Pngcs">
+			<HintPath>..\..\BepInEx\interop\Pngcs.dll</HintPath>
+		</Reference>
+
+		<Reference Include="RecRoom.Agdxgidisplays.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Agdxgidisplays.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Agmobilear.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Agmobilear.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Assetbundles.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Assetbundles.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Async">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Async.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Circuitsv2.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Circuitsv2.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.CultureUtil.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.CultureUtil.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Datastructures.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Datastructures.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.EditorHelpers.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.EditorHelpers.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.iOSNative.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.iOSNative.Runtime.dll</HintPath>
+		</Reference>
+
+		<Reference Include="RecRoom.Networking.DataTypes.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Networking.DataTypes.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Networking.Mocks">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Networking.Mocks.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Networking.NetworkedObjects.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Networking.NetworkedObjects.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Networking.RPC.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Networking.RPC.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Networking.SynchronizedFields.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Networking.SynchronizedFields.Runtime.dll</HintPath>
+		</Reference>
+
+		<Reference Include="RecRoom.ProBuilderExtensions">
+			<HintPath>..\..\BepInEx\interop\RecRoom.ProBuilderExtensions.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Promises.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Promises.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.ResourceManagement.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.ResourceManagement.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Scheduler.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Scheduler.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Streamingaudio.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Streamingaudio.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Tmp_overrides.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Tmp_overrides.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Tweening.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Tweening.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RecRoom.Unityextensions.Runtime">
+			<HintPath>..\..\BepInEx\interop\RecRoom.Unityextensions.Runtime.dll</HintPath>
+		</Reference>
+
+		<Reference Include="SA.Foundation">
+			<HintPath>..\..\BepInEx\interop\SA.Foundation.dll</HintPath>
+		</Reference>
+		<Reference Include="SA.Foundation.Network">
+			<HintPath>..\..\BepInEx\interop\SA.Foundation.Network.dll</HintPath>
+		</Reference>
+		<Reference Include="SA.Foundation.Tests">
+			<HintPath>..\..\BepInEx\interop\SA.Foundation.Tests.dll</HintPath>
+		</Reference>
+		<Reference Include="SA.iOS">
+			<HintPath>..\..\BepInEx\interop\SA.iOS.dll</HintPath>
+		</Reference>
+		<Reference Include="SA.iOS.XCode">
+			<HintPath>..\..\BepInEx\interop\SA.iOS.XCode.dll</HintPath>
+		</Reference>
+
+		<Reference Include="SteamVR">
+			<HintPath>..\..\BepInEx\interop\SteamVR.dll</HintPath>
+		</Reference>
+		<Reference Include="SteamVR_Actions">
+			<HintPath>..\..\BepInEx\interop\SteamVR_Actions.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Unity.Addressables">
+			<HintPath>..\..\BepInEx\interop\Unity.Addressables.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst">
+			<HintPath>..\..\BepInEx\interop\Unity.Burst.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst.Unsafe">
+			<HintPath>..\..\BepInEx\interop\Unity.Burst.Unsafe.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections">
+			<HintPath>..\..\BepInEx\interop\Unity.Collections.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Jobs">
+			<HintPath>..\..\BepInEx\interop\Unity.Jobs.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Mathematics">
+			<HintPath>..\..\BepInEx\interop\Unity.Mathematics.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Unity.Postprocessing.Runtime">
+			<HintPath>..\..\BepInEx\interop\Unity.Postprocessing.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.Runtime">
+			<HintPath>..\..\BepInEx\interop\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
+			<HintPath>..\..\BepInEx\interop\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Unity.ResourceManager">
+			<HintPath>..\..\BepInEx\interop\Unity.ResourceManager.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Unity.XR.ARFoundation">
+			<HintPath>..\..\BepInEx\interop\Unity.XR.ARFoundation.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.XR.ARSubsystems">
+			<HintPath>..\..\BepInEx\interop\Unity.XR.ARSubsystems.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.XR.Management">
+			<HintPath>..\..\BepInEx\interop\Unity.XR.Management.dll</HintPath>
+		</Reference>
+
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+
+		<Reference Include="UnityEngine.InputLegacyModule">
+		  <HintPath>..\..\BepInEx\unity-libs\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+
+		<Reference Include="UnityEngine.PhysicsModule">
+		  <HintPath>..\..\BepInEx\unity-libs\UnityEngine.PhysicsModule.dll</HintPath>
+		</Reference>
+
+		<Reference Include="UnityEngine.TilemapModule">
+		  <HintPath>..\..\BepInEx\unity-libs\UnityEngine.TilemapModule.dll</HintPath>
+		</Reference>
+
+		<Reference Include="UnityEngine.UI">
+		  <HintPath>..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Valve.Newtonsoft.Json">
+			<HintPath>..\..\BepInEx\interop\Valve.Newtonsoft.Json.dll</HintPath>
+		</Reference>
+
+		<Reference Include="XboxUWP">
+			<HintPath>..\..\BepInEx\interop\XboxUWP.dll</HintPath>
+		</Reference>
+
+	</ItemGroup>
+
+	<!-- =========================
+       BepInEx CORE DLLs
+       ========================= -->
+	<ItemGroup>
+
+		<Reference Include="0Harmony">
+			<HintPath>..\..\BepInEx\core\0Harmony.dll</HintPath>
+		</Reference>
+
+		<Reference Include="AsmResolver">
+			<HintPath>..\..\BepInEx\core\AsmResolver.dll</HintPath>
+		</Reference>
+		<Reference Include="AsmResolver.DotNet">
+			<HintPath>..\..\BepInEx\core\AsmResolver.DotNet.dll</HintPath>
+		</Reference>
+		<Reference Include="AsmResolver.PE">
+			<HintPath>..\..\BepInEx\core\AsmResolver.PE.dll</HintPath>
+		</Reference>
+		<Reference Include="AsmResolver.PE.File">
+			<HintPath>..\..\BepInEx\core\AsmResolver.PE.File.dll</HintPath>
+		</Reference>
+
+		<Reference Include="AssetRipper.CIL">
+			<HintPath>..\..\BepInEx\core\AssetRipper.CIL.dll</HintPath>
+		</Reference>
+		<Reference Include="AssetRipper.Primitives">
+			<HintPath>..\..\BepInEx\core\AssetRipper.Primitives.dll</HintPath>
+		</Reference>
+
+		<Reference Include="BepInEx.Core">
+			<HintPath>..\..\BepInEx\core\BepInEx.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx.Preloader.Core">
+			<HintPath>..\..\BepInEx\core\BepInEx.Preloader.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx.Unity.Common">
+			<HintPath>..\..\BepInEx\core\BepInEx.Unity.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx.Unity.IL2CPP">
+			<HintPath>..\..\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Cpp2IL.Core">
+			<HintPath>..\..\BepInEx\core\Cpp2IL.Core.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Disarm">
+			<HintPath>..\..\BepInEx\core\Disarm.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Gee.External.Capstone">
+			<HintPath>..\..\BepInEx\core\Gee.External.Capstone.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Iced">
+			<HintPath>..\..\BepInEx\core\Iced.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Il2CppInterop.Common">
+			<HintPath>..\..\BepInEx\core\Il2CppInterop.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppInterop.Generator">
+			<HintPath>..\..\BepInEx\core\Il2CppInterop.Generator.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppInterop.HarmonySupport">
+			<HintPath>..\..\BepInEx\core\Il2CppInterop.HarmonySupport.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppInterop.Runtime">
+			<HintPath>..\..\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+		</Reference>
+
+		<Reference Include="LibCpp2IL">
+			<HintPath>..\..\BepInEx\core\LibCpp2IL.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Mono.Cecil">
+			<HintPath>..\..\BepInEx\core\Mono.Cecil.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Cecil.Mdb">
+			<HintPath>..\..\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Cecil.Pdb">
+			<HintPath>..\..\BepInEx\core\Mono.Cecil.Pdb.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Cecil.Rocks">
+			<HintPath>..\..\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+		</Reference>
+
+		<Reference Include="MonoMod.Backports">
+			<HintPath>..\..\BepInEx\core\MonoMod.Backports.dll</HintPath>
+		</Reference>
+		<Reference Include="MonoMod.ILHelpers">
+			<HintPath>..\..\BepInEx\core\MonoMod.ILHelpers.dll</HintPath>
+		</Reference>
+		<Reference Include="MonoMod.RuntimeDetour">
+			<HintPath>..\..\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+		</Reference>
+		<Reference Include="MonoMod.Utils">
+			<HintPath>..\..\BepInEx\core\MonoMod.Utils.dll</HintPath>
+		</Reference>
+
+		<Reference Include="SemanticVersioning">
+			<HintPath>..\..\BepInEx\core\SemanticVersioning.dll</HintPath>
+		</Reference>
+
+		<Reference Include="StableNameDotNet">
+			<HintPath>..\..\BepInEx\core\StableNameDotNet.dll</HintPath>
+		</Reference>
+
+		<Reference Include="WasmDisassembler">
+			<HintPath>..\..\BepInEx\core\WasmDisassembler.dll</HintPath>
+		</Reference>
+
+	</ItemGroup>
 
 </Project>

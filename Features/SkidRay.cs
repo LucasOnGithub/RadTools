@@ -21,9 +21,11 @@ namespace RadTools.Features
     {
         internal static SkidRay Instance;
         internal static ToggleButton3D toggle;
+        private static bool persistedEnabled;
+
         internal static bool Active
         {
-            get => toggle != null && toggle.BOHIGPFGJBA;
+            get => toggle != null ? toggle.BOHIGPFGJBA : persistedEnabled;
         }
 
         internal void Awake()
@@ -68,6 +70,7 @@ namespace RadTools.Features
             {
                 Notifications.Notify("Notifications for prefabs will appear. Don't leave enabled for long, causes performance drops", Color.yellow, 5f);
             }
+            persistedEnabled = Active;
             previousEnabled = Active;
 
             if (Active && Time.time > notificationTime)
@@ -122,7 +125,7 @@ namespace RadTools.Features
 
             skidRay.transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>().text = "Skid Ray";
             toggle = skidRay.transform.Find("Container/ShowNames_Toggle").GetComponent<ToggleButton3D>();
-            toggle.BOHIGPFGJBA = false;
+            toggle.BOHIGPFGJBA = persistedEnabled;
             toggle.MPKFGBJBDBH = null;
         }
     }
